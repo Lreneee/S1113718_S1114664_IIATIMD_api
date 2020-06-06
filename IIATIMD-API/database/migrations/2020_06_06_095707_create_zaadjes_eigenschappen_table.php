@@ -15,7 +15,11 @@ class CreateZaadjesEigenschappenTable extends Migration
     {
         Schema::create('zaadjes_eigenschappen', function (Blueprint $table) {
             $table->id();
-            $table->timestamps();
+            $table->foreign('id')->references('id')->on('zaadjes');
+            $table->integer("aantal_zaadjes_in_vak");
+            $table->timestamp("begin_zaaitijd");
+            $table->timestamp("eind_zaaitijd");
+            $table->decimal("zaaidiepte");
         });
     }
 

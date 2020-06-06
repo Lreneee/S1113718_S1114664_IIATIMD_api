@@ -14,8 +14,7 @@ class CreateSoortTable extends Migration
     public function up()
     {
         Schema::create('soort', function (Blueprint $table) {
-            $table->id();
-            $table->timestamps();
+            $table->string('name')->unique();
         });
     }
 

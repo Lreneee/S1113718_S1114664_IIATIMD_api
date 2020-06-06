@@ -15,6 +15,10 @@ class CreateZaadjesTable extends Migration
     {
         Schema::create('zaadjes', function (Blueprint $table) {
             $table->id();
+            $table->string("name");
+            $table->string('soort')->default("Soort onbekend");
+            $table->foreign('soort')->references('name')->on('soort');
+            $table->string('description', 2000)->default("Geen beschrijving beschikbaar");
             $table->timestamps();
         });
     }
