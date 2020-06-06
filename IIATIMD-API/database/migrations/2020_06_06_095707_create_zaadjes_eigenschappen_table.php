@@ -15,7 +15,7 @@ class CreateZaadjesEigenschappenTable extends Migration
     {
         Schema::create('zaadjes_eigenschappen', function (Blueprint $table) {
             $table->id();
-            $table->foreign('id')->references('id')->on('zaadjes');
+            $table->foreign('id')->references('zaadjes_id')->on('zaadjes');
             $table->integer("aantal_zaadjes_in_vak");
             $table->timestamp("begin_zaaitijd");
             $table->timestamp("eind_zaaitijd");
