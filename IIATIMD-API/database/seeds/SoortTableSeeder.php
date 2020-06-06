@@ -23,5 +23,8 @@ class SoortTableSeeder extends Seeder
         DB::table('soort')->insert([
             'name' => 'Kruiden'
         ]);
+        DB::table('soort')->insert([
+            'name' => 'Bloemen'
+        ]);
     }
 }
