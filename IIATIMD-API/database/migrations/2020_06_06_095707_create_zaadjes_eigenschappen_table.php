@@ -17,10 +17,10 @@ class CreateZaadjesEigenschappenTable extends Migration
             $table->id();
             $table->foreign('id')->references('zaadjes_id')->on('zaadjes');
             $table->integer("aantal_zaadjes_in_vak");
-            $table->timestamp("begin_zaaitijd");
-            $table->timestamp("eind_zaaitijd");
-            $table->integer('hoogte');
-            $table->decimal("zaaidiepte");
+            $table->string("begin_zaaitijd")->default("Onbekend");
+            $table->string("eind_zaaitijd")->default("Onbekend");
+            $table->decimal('hoogte');
+            $table->decimal("zaaidiepte")->default(0);
         });
     }
 

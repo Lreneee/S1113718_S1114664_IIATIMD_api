@@ -15,5 +15,6 @@ class DatabaseSeeder extends Seeder
         $this->call(ZaadjesTableSeeder::class);
         $this->call(ZaadjesEigenschappenTableSeeder::class);
         $this->call(MoestuinTableSeeder::class);
+        $this->call(MoestuinMatenSeeder::class);
     }
 }
