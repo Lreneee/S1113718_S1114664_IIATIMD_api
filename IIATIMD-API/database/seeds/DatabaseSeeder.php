@@ -11,11 +11,11 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
+        $this->call(MoestuinMatenSeeder::class);
+        $this->call(MoestuinTableSeeder::class);
         $this->call(SoortTableSeeder::class);
         $this->call(ZaadjesTableSeeder::class);
         $this->call(ZaadjesEigenschappenTableSeeder::class);
-        $this->call(MoestuinTableSeeder::class);
-        $this->call(MoestuinMatenSeeder::class);
-        $this->call(TipsTableSeeder::class); 
+        $this->call(TipsTableSeeder::class);
     }
 }

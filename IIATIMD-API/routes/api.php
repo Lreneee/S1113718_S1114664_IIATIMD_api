@@ -19,6 +19,9 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 });
 
 Route::get('/moestuinen/get', '\App\Http\Controllers\MoestuinController@index');
+
 Route::get('/moestuin_maten/get', '\App\Http\Controllers\MoestuinMatenController@index');
+
+Route::get('/zaadjes', '\App\Http\Controllers\ZaadjesController@index');
 
 Route::post('/token', 'Controller@token');
