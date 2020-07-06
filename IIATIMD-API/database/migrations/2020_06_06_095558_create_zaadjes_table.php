@@ -20,7 +20,6 @@ class CreateZaadjesTable extends Migration
             $table->string('soort')->default("Soort onbekend");
             $table->foreign('soort')->references('name')->on('soort');
             $table->string('description', 2000)->default("Geen beschrijving beschikbaar");
-            $table->timestamps();
         });
     }
 

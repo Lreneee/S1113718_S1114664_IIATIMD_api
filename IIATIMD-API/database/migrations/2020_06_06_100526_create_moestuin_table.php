@@ -15,8 +15,8 @@ class CreateMoestuinTable extends Migration
     {
         Schema::create('moestuin', function (Blueprint $table) {
             $table->id('moestuin_id');
-            $table->bigInteger('user_id')->unsigned();
-            $table->foreign('user_id')->references('id')->on('users');
+//            $table->bigInteger('user_id')->unsigned();
+//            $table->foreign('user_id')->references('id')->on('users');
             $table->string('naam', 30);
             $table->bigInteger('moestuin_maten')->unsigned();
             $table->foreign('moestuin_maten')->references('id')->on('moestuinen_maten');

@@ -6,5 +6,7 @@ use Illuminate\Http\Request;
 
 class MoestuinToegevoegdeZaadjesController extends Controller
 {
-    //
+    public function update(){
+
+    }
 }
