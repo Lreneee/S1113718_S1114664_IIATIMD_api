@@ -17,8 +17,18 @@ use Illuminate\Support\Facades\Route;
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
+Route::group(['middleware' => 'auth:api'], function(){
+    Route::post('details', 'Controller@details');
+});
+
 Route::get('/moestuinen', '\App\Http\Controllers\MoestuinController@index');
 Route::post('/moestuinen/add', '\App\Http\Controllers\MoestuinController@store');
+
+Route::post('login', 'Controller@login');
+Route::post('register', 'Controller@register');
+
+Route::get('/moestuinen/get', '\App\Http\Controllers\MoestuinController@index');
+Route::get('/moestuin_maten/get', '\App\Http\Controllers\MoestuinMatenController@index');
 
 Route::get('/moestuin_maten', '\App\Http\Controllers\MoestuinMatenController@index');
 

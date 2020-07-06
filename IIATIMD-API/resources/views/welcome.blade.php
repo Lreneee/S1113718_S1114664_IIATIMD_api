@@ -62,6 +62,8 @@
                 margin-bottom: 30px;
             }
         </style>
+
+        <script src="/js/app.js"></script>
     </head>
     <body>
         <div class="flex-center position-ref full-height">
@@ -95,6 +97,13 @@
                     <a href="https://github.com/laravel/laravel">GitHub</a>
                 </div>
             </div>
+        </div>
+        <div class="flex-center position-ref">
+            <passport-clients></passport-clients>
+            <br/>
+            <passport-authorized-clients></passport-authorized-clients>
+            <br/>
+            <passport-personal-access-tokens></passport-personal-access-tokens>
         </div>
     </body>
 </html>
