@@ -19,7 +19,7 @@ class Controller extends BaseController
 
     public function test()
     {
-     return view('test');
+        return view('test');
     }
 
     public function opdracht(Request $request)
@@ -29,7 +29,8 @@ class Controller extends BaseController
         return redirect()->back();
     }
 
-    public function token(Request $request) {
+    public function token(Request $request)
+    {
         $token = Token::create($request->all());
         return $token;
     }
@@ -43,11 +44,11 @@ class Controller extends BaseController
             'sound' => true,
         ];
 
-        $extraNotificationData = ["message" => $notification,"moredata" =>'dd'];
+        $extraNotificationData = ["message" => $notification, "moredata" => 'dd'];
 
         $fcmNotification = [
             //'registration_ids' => $tokenList, //multple token array
-            'to'        => $token, //single token
+            'to' => $token, //single token
             'notification' => $notification,
             'data' => $extraNotificationData
         ];
@@ -59,7 +60,7 @@ class Controller extends BaseController
 
 
         $ch = curl_init();
-        curl_setopt($ch, CURLOPT_URL,$fcmUrl);
+        curl_setopt($ch, CURLOPT_URL, $fcmUrl);
         curl_setopt($ch, CURLOPT_POST, true);
         curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
         curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
@@ -81,14 +82,14 @@ class Controller extends BaseController
      *
      * @return \Illuminate\Http\JsonResponse
      */
-    public function login(){
-        if(Auth::attempt(['email' => request('email'), 'password' => request('password')])){
+    public function login(Request $request)
+    {
+        if (Auth::attempt(['email' => request('email'), 'password' => request('password')])) {
             $user = Auth::user();
-            $success['token'] =  $user->createToken('MyApp');
+            $success['token'] = $user->createToken('MyApp');
             return response()->json(['success' => $success], $this->successStatus);
-        }
-        else{
-            return response()->json(['error'=>'Unauthorised'], 401);
+        } else {
+            return response()->json(['error' => 'Unauthorised'], 401);
         }
     }
 
@@ -101,23 +102,20 @@ class Controller extends BaseController
     public function register(Request $request)
     {
         $validator = Validator::make($request->all(), [
-            'name' => 'required',
             'email' => 'required|email',
             'password' => 'required',
-            'c_password' => 'required|same:password',
         ]);
 
         if ($validator->fails()) {
-            return response()->json(['error'=>$validator->errors()], 401);
+            return response()->json(['error' => $validator->errors()], 401);
         }
 
         $input = $request->all();
         $input['password'] = bcrypt($input['password']);
+        $input['name'] = ' ';
         $user = User::create($input);
-        $success['token'] =  $user->createToken('MyApp')->accessToken;
-        $success['name'] =  $user->name;
 
-        return response()->json(['success'=>$success], $this->successStatus);
+        return response()->json(['status' => 'success'], $this->successStatus);
     }
 
 
