@@ -17,11 +17,16 @@ use Illuminate\Support\Facades\Route;
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
+Route::get('/moestuinen', '\App\Http\Controllers\MoestuinController@index');
+Route::post('/moestuinen/add', '\App\Http\Controllers\MoestuinController@store');
 
-Route::get('/moestuinen/get', '\App\Http\Controllers\MoestuinController@index');
+Route::get('/moestuin_maten', '\App\Http\Controllers\MoestuinMatenController@index');
 
-Route::get('/moestuin_maten/get', '\App\Http\Controllers\MoestuinMatenController@index');
+Route::put('/moestuin_eigenschappen/update', '\App\Http\Controllers\MoestuinToegevoegdeZaadjesController@update');
+
+Route::get('/tips', '\App\Http\Controllers\TipsController@index');
 
 Route::get('/zaadjes', '\App\Http\Controllers\ZaadjesController@index');
+Route::get('/zaadjes_eigenschappen', '\App\Http\Controllers\ZaadjesEigenschappenController@index'); 
 
 Route::post('/token', 'Controller@token');

@@ -15,6 +15,7 @@ class ZaadjesTableSeeder extends Seeder
             'name' => 'Struiktomaat',
             'img' => 'https://images.unsplash.com/photo-1527325752894-f1b38b396f40?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1400&q=80',
             'soort' => 'Groente',
+            'description'=> 'Ik ben een struiktomaat met een langere beschrijving. Dit vind ik leuk hahahaha'
         ]);
         DB::table('zaadjes')->insert([
             'name' => 'Babypompoen',
