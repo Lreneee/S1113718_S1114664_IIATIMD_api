@@ -19,6 +19,7 @@ class MoestuinMatenSeeder extends Seeder
             'breedte_in_vakjes' => '4',
         ]);
         DB::table('moestuinen_maten')->insert([
+            'img' => 'http://irenedekoning.nl/img/moestuin_120x60.png',
             'lengte_in_cm' => '120',
             'lengte_in_vakjes' => '4',
             'breedte_in_cm' => '60',

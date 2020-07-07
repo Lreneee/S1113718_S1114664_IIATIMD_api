@@ -15,6 +15,7 @@ class CreateMoestuinMatenTable extends Migration
     {
         Schema::create('moestuinen_maten', function (Blueprint $table) {
             $table->id('id');
+            $table->string('img')->default("Geen afbeelding");
             $table->integer('lengte_in_cm');
             $table->integer('lengte_in_vakjes');
             $table->integer('breedte_in_cm');

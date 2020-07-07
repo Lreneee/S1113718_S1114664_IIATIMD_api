@@ -11,6 +11,13 @@ class MoestuinTableSeeder extends Seeder
      */
     public function run()
     {
-        //
+        DB::table('moestuin')->insert([
+            'naam'=>'Irene is gewelddig',
+            'moestuin_maten'=>2
+        ]);
+        DB::table('moestuin')->insert([
+            'naam'=>'Anne ook is gewelddig',
+            'moestuin_maten'=>2
+        ]);
     }
 }
