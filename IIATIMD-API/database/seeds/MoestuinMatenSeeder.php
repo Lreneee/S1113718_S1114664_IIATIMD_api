@@ -48,6 +48,12 @@ class MoestuinMatenSeeder extends Seeder
             'breedte_in_cm' => '60',
             'breedte_in_vakjes' => '2',
         ]);
+        DB::table('moestuin_maten')->insert([
+            'lengte_in_cm'=> '60',
+            'lengte_in_vakjes' => '2',
+            'breedte_in_cm' => '30',
+            'breedte_in_vakjes' => '1',
+        ]);
         DB::table('moestuinen_maten')->insert([
             'lengte_in_cm' => '30',
             'lengte_in_vakjes' => '1',
