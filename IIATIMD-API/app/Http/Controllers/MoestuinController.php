@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Moestuin;
+use DB;
 use Illuminate\Http\Request;
 use Mockery\Exception;
 
@@ -10,8 +11,14 @@ class MoestuinController extends Controller
 {
     public function index()
     {
-        $moestuinen = Moestuin::all();
-        return json_encode($moestuinen, JSON_FORCE_OBJECT);
+
+        $moestuin = DB::table('moestuin')
+            ->join('moestuinen_maten', 'moestuin.moestuin_maten', 'moestuinen_maten.id')
+            ->select('moestuin.moestuin_id', 'moestuinen_maten.img', 'moestuin.naam','moestuinen_maten.lengte_in_vakjes AS moestuin_lengte', 'moestuinen_maten.breedte_in_vakjes AS moestuin_breedte')
+            ->get();
+
+
+        return json_encode($moestuin, JSON_FORCE_OBJECT);
     }
 
     public function store(Request $request)
