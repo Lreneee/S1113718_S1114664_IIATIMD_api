@@ -30,6 +30,6 @@ class CreateMoestuinMatenTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('moestuinen');
+        Schema::dropIfExists('moestuinen_maten');
     }
 }
