@@ -22,6 +22,7 @@ Route::group(['middleware' => 'auth:api'], function(){
 });
 
 Route::get('/moestuinen', '\App\Http\Controllers\MoestuinController@index');
+Route::post('/moestuin/details', '\App\Http\Controllers\MoestuinController@getMoestuin');
 Route::post('/moestuinen/add', '\App\Http\Controllers\MoestuinController@store');
 
 Route::post('login', 'Controller@login');
@@ -37,6 +38,6 @@ Route::put('/moestuin_eigenschappen/update', '\App\Http\Controllers\MoestuinToeg
 Route::get('/tips', '\App\Http\Controllers\TipsController@index');
 
 Route::get('/zaadjes', '\App\Http\Controllers\ZaadjesController@index');
-Route::get('/zaadjes_eigenschappen', '\App\Http\Controllers\ZaadjesEigenschappenController@index'); 
+Route::get('/zaadjes_eigenschappen', '\App\Http\Controllers\ZaadjesEigenschappenController@index');
 
 Route::post('/token', 'Controller@token');

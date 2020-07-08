@@ -17,7 +17,7 @@ class MoestuinTableSeeder extends Seeder
         ]);
         DB::table('moestuin')->insert([
             'naam'=>'Anne ook is gewelddig',
-            'moestuin_maten'=>2
+            'moestuin_maten'=>4
         ]);
     }
 }
