@@ -27,6 +27,8 @@ Route::post('/moestuinen/add', '\App\Http\Controllers\MoestuinController@store')
     Route::put('/moestuin_eigenschappen/update', '\App\Http\Controllers\MoestuinToegevoegdeZaadjesController@update');
 
     Route::get('/zaadjes_eigenschappen', '\App\Http\Controllers\ZaadjesEigenschappenController@index');
+
+    Route::post('/fcm-token', 'Controller@token');
 });
 Route::post('/moestuin/details', '\App\Http\Controllers\MoestuinController@getMoestuin');
 Route::post('/toegevoegde_zaadjes', '\App\Http\Controllers\MoestuinToegevoegdeZaadjesController@index');
@@ -39,4 +41,5 @@ Route::get('/moestuinen', '\App\Http\Controllers\MoestuinController@index');
 Route::post('login', 'Controller@login');
 Route::post('register', 'Controller@register');
 
-Route::post('/token', 'Controller@token');
+
+

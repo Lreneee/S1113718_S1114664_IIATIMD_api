@@ -14,7 +14,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/test', 'Controller@test');
-Route::post('/opdracht','Controller@opdracht')->name("opdracht");
+Route::post('/opdracht/{user_id}','Controller@opdracht')->name("opdracht");
 
 Route::get('/', function () {
     return view('welcome');
