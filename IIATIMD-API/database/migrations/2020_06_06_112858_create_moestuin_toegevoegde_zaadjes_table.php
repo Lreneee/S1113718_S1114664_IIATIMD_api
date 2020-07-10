@@ -19,7 +19,6 @@ class CreateMoestuinToegevoegdeZaadjesTable extends Migration
             $table->bigInteger("zaadjes_id")->unsigned();
             $table->foreign('zaadjes_id')->references('zaadjes_id')->on('zaadjes');
             $table->integer('x');
-            $table->integer('y');
         });
     }
 

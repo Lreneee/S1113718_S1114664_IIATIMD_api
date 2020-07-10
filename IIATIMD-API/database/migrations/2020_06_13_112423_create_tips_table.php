@@ -18,7 +18,7 @@ class CreateTipsTable extends Migration
             $table->string('title');
             $table->string('short_description', 200);
             $table->string('long_description', 2000);
-            $table->string('img')->default("Geen afbeelding");
+            $table->string('img')->default("https://www.landleven.nl/getmedia/07654159-f577-4166-a23d-4188813d22de/aanlegtips-mooie-moestuinLK.jpg?width=816&height=544&ext=.jpg");
             $table->timestamps();
         });
     }

@@ -26,6 +26,7 @@ class MoestuinController extends Controller
             ->join('moestuinen_maten', 'moestuin.moestuin_maten', 'moestuinen_maten.id')
             ->select('moestuin.moestuin_id', 'moestuin.naam', 'moestuinen_maten.img', 'moestuinen_maten.lengte_in_vakjes', 'moestuinen_maten.breedte_in_vakjes')
             ->get();
+
         return json_encode($moestuin, JSON_FORCE_OBJECT);
 
     }
