@@ -8,10 +8,15 @@
     <title>Document</title>
 </head>
 <body>
-<form action="{{route("opdracht")}}" method="post">
-    @csrf
-    <input type="text" name="opdracht" id="opdracht">
-    <input type="submit">
-</form>
+
+@foreach($users as $user)
+    <form action="{{route("opdracht", [$user->id])}}" method="post">
+        @csrf
+        <label>Send message to user: {{$user->email}}</label>
+        <input type="text" name="opdracht" id="opdracht">
+        <input type="submit">
+    </form>
+    <hr>
+@endforeach
 </body>
 </html>
