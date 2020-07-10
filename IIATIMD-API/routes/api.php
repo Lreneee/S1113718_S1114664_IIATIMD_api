@@ -28,9 +28,10 @@ Route::post('/moestuinen/add', '\App\Http\Controllers\MoestuinController@store')
 
     Route::get('/zaadjes_eigenschappen', '\App\Http\Controllers\ZaadjesEigenschappenController@index');
 });
+Route::post('/zaadje_moestuin', '\App\Http\Controllers\MoestuinToegevoegdeZaadjesController@store');
 Route::post('/moestuin/details', '\App\Http\Controllers\MoestuinController@getMoestuin');
 Route::post('/toegevoegde_zaadjes', '\App\Http\Controllers\MoestuinToegevoegdeZaadjesController@index');
-Route::post('/zaadje_moestuin', '\App\Http\Controllers\MoestuinToegevoegdeZaadjesController@store');
+Route::post('/moestuinen/add', '\App\Http\Controllers\MoestuinController@store');
 
 Route::get('/zaadjes', '\App\Http\Controllers\ZaadjesController@index');
 Route::get('/tips', '\App\Http\Controllers\TipsController@index');
